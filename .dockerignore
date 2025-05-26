@@ -1,0 +1,5 @@
+# ignore python environment files
+__pycache__
+.venv
+
+README.md

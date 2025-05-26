@@ -1,0 +1,70 @@
+[project]
+name = "python-boilerplate"
+version = "1.0.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.11",
+]
+
+[tool.ruff]
+# Enable all rules that correspond to PEP 8
+
+lint.select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "N",   # pep8-naming
+    # "D",   # pydocstyle
+    "UP",  # pyupgrade
+    "I",   # isort
+]
+
+# Ignore some rules that may be too strict for general use
+
+lint.ignore = [
+    "D203",  # one-blank-line-before-class (conflicts with D211)
+    "D212",  # multi-line-summary-first-line (conflicts with D213)
+]
+
+# Allow unused variables if they start with an underscore
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Line length according to PEP 8 - 79 characters
+line-length = 79
+
+# Target Python version
+target-version = "py310"
+
+exclude = [
+    ".venv",
+    "venv",
+    "__pycache__",
+    "migrations",
+    "build",
+    "dist",
+]
+
+# Docstring handling
+[tool.lint.pydocstyle]
+convention = "google"  # Use Google convention for docstrings
+
+# Settings for isort
+[tool.lint.isort]
+known-first-party = ["crypto-oracle"]  # Replace with your package name
+known-third-party = []
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+# # Settings for pycodestyle
+# [tool.lint.pycodestyle]
+# max-doc-length = 72  # Maximum docstring line length according to PEP 8
+
+# Additional formatting options
+[tool.ruff.format]
+quote-style = "double"  # Use double quotes
+indent-style = "space"  # Use spaces for indentation
+line-ending = "auto"    # Auto-detect line endings

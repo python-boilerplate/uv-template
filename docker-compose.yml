@@ -1,0 +1,24 @@
+# rename to your project name
+name: python-boilerplate
+
+
+# rename to your network
+networks:
+  project-network:
+    name: project-network
+    driver: bridge
+
+services:
+  python-boilerplate:
+    image: python-boilerplate
+    container_name: python-boilerplate
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8000"
+    restart: on-failure
+    volumes:
+      - ./src/:/src/
+    networks:
+      - project-network
