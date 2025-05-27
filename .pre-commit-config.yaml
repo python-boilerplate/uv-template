@@ -1,0 +1,32 @@
+repos:
+  - repo: local
+    hooks:
+      # lint code
+      - id: ruff
+        name: Ruff
+        description: Run Ruff for linting Python code
+        entry: uv run ruff check --config=pyproject.toml ./src/
+        types: [python]
+        language: system
+        always_run: true
+        pass_filenames: false
+
+      # format code
+      - id: ruff
+        name: Ruff
+        description: Run Ruff for formatting Python code
+        entry: uv run ruff format --config=pyproject.toml ./src/
+        types: [python]
+        language: system
+        always_run: true
+        pass_filenames: false
+
+      # check types
+      - id: mypy
+        name: Mypy
+        description: Run Mypy for type checking types in Python code
+        entry: uv run mypy --config-file=pyproject.toml --explicit-package-bases ./src/
+        types: [python]
+        language: system
+        always_run: true
+        pass_filenames: false

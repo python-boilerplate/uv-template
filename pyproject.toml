@@ -8,9 +8,12 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "mypy>=1.15.0",
+    "pre-commit>=4.2.0",
     "ruff>=0.11.11",
 ]
 
+# ================================= RUFF
 [tool.ruff]
 # Enable all rules that correspond to PEP 8
 
@@ -68,3 +71,7 @@ section-order = ["future", "standard-library", "third-party", "first-party", "lo
 quote-style = "double"  # Use double quotes
 indent-style = "space"  # Use spaces for indentation
 line-ending = "auto"    # Auto-detect line endings
+
+# ================================= MYPY
+[tool.mypy]
+strict = true  # Enable strict type checking

@@ -1,7 +1,7 @@
 from src.utils.logging import setup_logging
 
 
-def main():
+def main() -> None:
     logger = setup_logging()
     logger.info("Starting the application...")
 

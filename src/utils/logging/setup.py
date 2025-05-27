@@ -7,7 +7,7 @@ from src.utils.logging.config import (
 )
 
 
-def setup_logging():
+def setup_logging() -> logging.Logger:
     # Create a logger
     logger = logging.getLogger()
     logger.setLevel(level=DEFAULT_LOGGING_LEVEL)
