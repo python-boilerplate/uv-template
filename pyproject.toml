@@ -1,7 +1,7 @@
 [project]
 name = "python-boilerplate"
 version = "0.2.0"
-description = "Add your description here"
+description = "A template for quickly starting new projects in Python "
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
@@ -77,6 +77,7 @@ line-ending = "auto"    # Auto-detect line endings
 [tool.mypy]
 strict = true  # Enable strict type checking
 
+# ================================= COMMITIZEN
 [tool.commitizen]
 name = "cz_conventional_commits"
 tag_format = "$version"
