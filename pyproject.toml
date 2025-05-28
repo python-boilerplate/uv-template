@@ -1,6 +1,6 @@
 [project]
 name = "python-boilerplate"
-version = "1.0.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -76,3 +76,10 @@ line-ending = "auto"    # Auto-detect line endings
 # ================================= MYPY
 [tool.mypy]
 strict = true  # Enable strict type checking
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "uv"
+update_changelog_on_bump = true
