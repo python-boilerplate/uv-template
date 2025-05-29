@@ -26,6 +26,6 @@ RUN uv sync --frozen
 EXPOSE 8000
 
 # Start the application
-ENTRYPOINT ["uv", "run", "__main__.py"]
+ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
 
 # ENTRYPOINT ["/bin/sh", "./scripts/docker-entrypoint.sh"]
