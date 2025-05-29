@@ -1,32 +1,19 @@
 repos:
-  - repo: local
-    hooks:
-      # lint code
-      - id: ruff
-        name: Ruff
-        description: Run Ruff for linting Python code
-        entry: uv run ruff check --config=pyproject.toml ./src/
-        types: [python]
-        language: system
-        always_run: true
-        pass_filenames: false
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.11.12
+  hooks:
+    # Run the linter.
+    - id: ruff-check
+      args: [ --config=pyproject.toml, ./src/ ]
 
-      # format code
-      - id: ruff
-        name: Ruff
-        description: Run Ruff for formatting Python code
-        entry: uv run ruff format --config=pyproject.toml ./src/
-        types: [python]
-        language: system
-        always_run: true
-        pass_filenames: false
+    # Run the formatter.
+    - id: ruff-format
+      args: [ --config=pyproject.toml, ./src/  ]
 
-      # check types
-      - id: mypy
-        name: Mypy
-        description: Run Mypy for type checking types in Python code
-        entry: uv run mypy --config-file=pyproject.toml --explicit-package-bases ./src/
-        types: [python]
-        language: system
-        always_run: true
-        pass_filenames: false
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.15.0
+  hooks:
+    # Run the type checker.
+    - id: mypy
+      args: [ --config-file=pyproject.toml, --explicit-package-bases, ./src/ ]
