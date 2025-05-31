@@ -1,3 +1,12 @@
+## 0.5.0 (2025-05-31)
+
+### Feat
+
+- update vscode profile for devcontainer
+- add vscode profile to devcontainer configuration
+- configure Dependabot for automated dependency updates and security checks
+- setup .devcontainer for codespaces
+
 ## 0.4.1 (2025-05-31)
 
 ### Fix
