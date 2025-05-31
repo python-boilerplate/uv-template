@@ -1,3 +1,9 @@
+## 0.4.0 (2025-05-31)
+
+### Feat
+
+- add makefile for simplifies running scripts and tasks
+
 ## 0.3.1 (2025-05-29)
 
 ### Fix
