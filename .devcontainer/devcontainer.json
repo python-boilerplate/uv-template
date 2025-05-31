@@ -26,7 +26,7 @@
 	"postCreateCommand": "uv sync",
 	"customizations": {
 		"vscode": {
-			"profile": "https://gist.github.com/monok8i/cd6ad329d7221c37d1b4e7ce7b2d0e24",
+			"profile": "https://gist.github.com/monok8i/13b76ccd25a53adeb429fb044fbf1987",
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
