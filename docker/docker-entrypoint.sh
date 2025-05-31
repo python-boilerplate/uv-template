@@ -2,4 +2,4 @@
 
 set -e
 
-uv run main.py
+python __main__.py

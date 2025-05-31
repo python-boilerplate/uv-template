@@ -31,6 +31,8 @@ FROM python:3.12-slim-bookworm
 # Copy the application from the builder
 COPY --from=builder --chown=app:app /app /app
 
+WORKDIR /app
+
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
