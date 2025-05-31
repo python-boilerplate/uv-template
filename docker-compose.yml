@@ -11,10 +11,25 @@ networks:
 services:
   python-boilerplate:
     image: python-boilerplate
-    container_name: python-boilerplate
+    container_name: py-blplt
     build:
       context: ./
       dockerfile: Dockerfile
+
+    develop:
+      watch:
+        # Sync the working directory with the `/app` directory in the container
+        - action: sync
+          path: .
+          target: /app
+          # Exclude the project virtual environment
+          ignore:
+            - app/.venv/
+
+        # Rebuild the image on changes to the `pyproject.toml`
+        - action: rebuild
+          path: ./app/pyproject.toml
+
     ports:
       - "8080:8000"
     restart: on-failure

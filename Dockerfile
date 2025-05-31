@@ -1,31 +1,37 @@
-ARG PYTHON_VERSION=3.12.9
-FROM python:${PYTHON_VERSION}-slim
+# Example taken from https://github.com/astral-sh/uv-docker-example/blob/main/multistage.Dockerfile
+# An example using multi-stage image builds to create a final image without uv.
 
-# Download curl
-RUN apt-get update && apt-get install -y curl
+# First, build the application in the `/app` directory.
+# See `Dockerfile` for details.
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS builder
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 
-# Download the latest uv installer
-ADD https://astral.sh/uv/install.sh /uv-installer.sh
+# Disable Python downloads, because we want to use the system interpreter
+# across both images. If using a managed Python version, it needs to be
+# copied from the build image into the final image; see `standalone.Dockerfile`
+# for an example.
+ENV UV_PYTHON_DOWNLOADS=0
 
-# Run the installer then remove it
-RUN sh /uv-installer.sh && rm /uv-installer.sh
+WORKDIR /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --locked --no-install-project --no-dev
+COPY . /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-dev
 
-# Ensure the installed binary is on the `PATH`
-ENV PATH="/root/.local/bin:${PATH}"
 
-# Set the working directory
-WORKDIR /app/
+# Then, use a final image without uv
+FROM python:3.12-slim-bookworm
+# It is important to use the image that matches the builder, as the path to the
+# Python executable must be the same, e.g., using `python:3.11-slim-bookworm`
+# will fail.
 
-# Copy project files
-COPY . .
+# Copy the application from the builder
+COPY --from=builder --chown=app:app /app /app
 
-# Sync project dependencies with new virtual environment
-RUN uv sync --frozen
+# Place executables in the environment at the front of the path
+ENV PATH="/app/.venv/bin:$PATH"
 
-# Expose port
-EXPOSE 8000
-
-# Start the application
 ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
-
-# ENTRYPOINT ["/bin/sh", "./scripts/docker-entrypoint.sh"]
