@@ -1,3 +1,9 @@
+## 0.6.0 (2025-06-01)
+
+### Feat
+
+- add pytest and configure for testing sync/async functions
+
 ## 0.5.0 (2025-05-31)
 
 ### Feat
