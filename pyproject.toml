@@ -10,8 +10,10 @@ dependencies = []
 dev = [
     "commitizen>=4.8.2",
     "mkdocs>=1.6.1",
-    "mypy>=1.15.0",
+    "mypy>=1.16.0",
     "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=1.0.0",
     "ruff>=0.11.11",
 ]
 
@@ -20,20 +22,20 @@ dev = [
 # Enable all rules that correspond to PEP 8
 
 lint.select = [
-    "E",   # pycodestyle errors
-    "W",   # pycodestyle warnings
-    "F",   # pyflakes
-    "N",   # pep8-naming
-    # "D",   # pydocstyle
-    "UP",  # pyupgrade
-    "I",   # isort
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "N", # pep8-naming
+    # "D", # pydocstyle
+    "UP", # pyupgrade
+    "I", # isort
 ]
 
 # Ignore some rules that may be too strict for general use
 
 lint.ignore = [
-    "D203",  # one-blank-line-before-class (conflicts with D211)
-    "D212",  # multi-line-summary-first-line (conflicts with D213)
+    "D203", # one-blank-line-before-class (conflicts with D211)
+    "D212", # multi-line-summary-first-line (conflicts with D213)
 ]
 
 # Allow unused variables if they start with an underscore
@@ -45,24 +47,23 @@ line-length = 79
 # Target Python version
 target-version = "py310"
 
-exclude = [
-    ".venv",
-    "venv",
-    "__pycache__",
-    "migrations",
-    "build",
-    "dist",
-]
+exclude = [".venv", "venv", "__pycache__", "migrations", "build", "dist"]
 
 # Docstring handling
 [tool.lint.pydocstyle]
-convention = "google"  # Use Google convention for docstrings
+convention = "google" # Use Google convention for docstrings
 
 # Settings for isort
 [tool.lint.isort]
-known-first-party = ["crypto-oracle"]  # Replace with your package name
+known-first-party = ["crypto-oracle"] # Replace with your package name
 known-third-party = []
-section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
 
 # # Settings for pycodestyle
 # [tool.lint.pycodestyle]
@@ -70,13 +71,14 @@ section-order = ["future", "standard-library", "third-party", "first-party", "lo
 
 # Additional formatting options
 [tool.ruff.format]
-quote-style = "double"  # Use double quotes
-indent-style = "space"  # Use spaces for indentation
-line-ending = "auto"    # Auto-detect line endings
+quote-style = "double" # Use double quotes
+indent-style = "space" # Use spaces for indentation
+line-ending = "auto" # Auto-detect line endings
 
 # ================================= MYPY
 [tool.mypy]
-strict = true  # Enable strict type checking
+strict = true # Enable strict type checking
+explicit_package_bases = true
 
 # ================================= COMMITIZEN
 [tool.commitizen]
@@ -85,3 +87,8 @@ tag_format = "$version"
 version_scheme = "pep440"
 version_provider = "uv"
 update_changelog_on_bump = true
+
+# ================================= PYTEST
+[tool.pytest.ini_options]
+# Use the default event loop policy for async tests
+asyncio_default_fixture_loop_scope = "function"

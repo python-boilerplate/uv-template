@@ -5,15 +5,25 @@ repos:
   hooks:
     # Run the linter.
     - id: ruff-check
-      args: [ --config=pyproject.toml, ./src/ ]
+      args: [ --config=pyproject.toml ]
+      files: ^src/
 
     # Run the formatter.
     - id: ruff-format
-      args: [ --config=pyproject.toml, ./src/  ]
+      args: [ --config=pyproject.toml ]
+      files: ^src/
 
 - repo: https://github.com/pre-commit/mirrors-mypy
   rev: v1.15.0
   hooks:
-    # Run the type checker.
+    # Run mypy type checking.
     - id: mypy
-      args: [ --config-file=pyproject.toml, --explicit-package-bases, ./src/ ]
+      args: [--config-file=pyproject.toml ]
+      files: ^src/
+
+
+- repo: https://github.com/christophmeissner/pytest-pre-commit
+  rev: 1.0.0
+  hooks:
+  - id: pytest
+    args: [ -v ]
