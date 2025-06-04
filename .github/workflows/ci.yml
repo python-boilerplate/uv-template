@@ -16,7 +16,7 @@ jobs:
       - name: Upgrade pip
         run: pip install --upgrade pip
       - name: Install dependencies
-        run: pip install ruff mypy pytest
+        run: pip install ruff mypy pytest pytest-asyncio
       - name: Lint (ruff)
         run: ruff check --config=pyproject.toml src/
       - name: Type check (mypy)
