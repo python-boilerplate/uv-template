@@ -30,7 +30,7 @@ jobs:
         pip install ruff mypy pytest pytest-asyncio
     - name: Lint (ruff)
       run:
-        ruff --config=pyproject.toml src/
+        ruff check --config=pyproject.toml src/
     - name: Type check (mypy)
       run:
         mypy --config-file=pyproject.toml src/
