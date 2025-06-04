@@ -1,3 +1,15 @@
+## 0.7.0 (2025-06-04)
+
+### Feat
+
+- add workflow for testing on multiple Python versions
+- add workflow for linting, type-checking and testing
+
+### Fix
+
+- fix problem with running ruff linter
+- fix problem with testing async functions
+
 ## 0.6.0 (2025-06-01)
 
 ### Feat
