@@ -1,6 +1,6 @@
 [project]
 name = "python-boilerplate"
-version = "0.7.0"
+version = "0.8.0"
 description = "A template for quickly starting new projects in Python "
 readme = "README.md"
 requires-python = ">=3.12"

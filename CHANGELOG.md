@@ -1,3 +1,9 @@
+## 0.8.0 (2025-06-05)
+
+### Feat
+
+- change workflow to check minimal python version to run code
+
 ## 0.7.0 (2025-06-04)
 
 ### Feat
