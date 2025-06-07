@@ -53,7 +53,9 @@ prod-build:
 	$(d) build -t $(PROJECT_NAME):prod -f prod.Dockerfile .
 
 prod-run:
-	$(d) run -it --env-file .env.production --name $(PROD_NAME) $(PROJECT_NAME):prod
+	$(d) run -d --env-file .env.production --name $(PROD_NAME) $(PROJECT_NAME):prod
 
+prod-logs:
+	$(d) logs -f $(PROD_NAME)
 
-.PHONY: run test lint format typecheck check docker-build docker-bash docker-run compose-build compose-up compose-stop compose-down clean
+.PHONY: run test lint format typecheck dev-logs dev-exec dev-bash dev-build dev-up dev-stop dev-down clean prod-build prod-run
