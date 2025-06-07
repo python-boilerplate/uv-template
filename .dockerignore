@@ -6,6 +6,8 @@ __pycache__/
 .venv/
 .venv
 .env/
+.env.development
+.env.production
 .Python
 .mypy_cache/
 .ruff_cache/
