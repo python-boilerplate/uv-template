@@ -1,4 +1,7 @@
 PROJECT_NAME = python-boilerplate
+CONTAINER_NAME = py-blplt
+d = docker
+dc = docker compose
 
 run:
 	uv run __main__.py
@@ -16,25 +19,31 @@ typecheck:
 	uv run mypy --config-file=pyproject.toml --explicit-package-bases ./src/
 
 docker-build:
-	docker build -t $(PROJECT_NAME) .
+	$(d) build -t $(PROJECT_NAME) .
+
+docker-bash:
+	$(d) run --rm -it --env-file .env $(PROJECT_NAME) /bin/bash
 
 docker-run:
-	docker run --rm -it --env-file example.env $(PROJECT_NAME)
+	$(d) run --rm -it --env-file .env $(PROJECT_NAME)
+
+docker-logs:
+	$(d) logs -f $(CONTAINER_NAME)
 
 compose-build:
-	docker compose up --build -d
+	$(dc) up --build -d
 
 compose-up:
-	docker compose up -d
+	$(dc) up -d
 
 compose-stop:
-	docker compose stop
+	$(dc) stop
 
 compose-down:
-	docker compose down
+	$(dc) down
 
 clean:
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	rm -rf .mypy_cache .ruff_cache .pytest_cache
 
-.PHONY: run test lint format typecheck check docker-build docker-run compose-build compose-up compose-stop compose-down clean
+.PHONY: run test lint format typecheck check docker-build docker-bash docker-run compose-build compose-up compose-stop compose-down clean

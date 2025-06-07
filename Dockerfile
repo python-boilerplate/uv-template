@@ -21,6 +21,8 @@ COPY . /app
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev
 
+# Remove the uv lock file and pyproject.toml, so that the final image does not
+RUN rm -f pyproject.toml uv.lock .python-version
 
 # Then, use a final image without uv
 FROM python:3.12-slim-bookworm
@@ -36,4 +38,4 @@ WORKDIR /app
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
-ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
+CMD ["/bin/sh", "./docker/docker-entrypoint.sh"]

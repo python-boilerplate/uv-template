@@ -16,6 +16,7 @@ __pycache__/
 .hypothesis/
 pip-log.txt
 pip-delete-this-directory.txt
+requirements.txt
 
 # Editor directories and OS files
 .idea/
@@ -42,3 +43,12 @@ mkdocs.yml
 # Project files you don't want in image
 LICENSE
 Makefile
+
+# Github
+.devcontainer/
+.github/
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
