@@ -12,6 +12,7 @@ RUN uv sync
 # RUN apt-get update && apt-get install -y vim git
 
 ENV PATH="/app/.venv/bin:$PATH"
+ENV APP_STAGE="development"
 
 # For interactive work - bash or shell
 CMD ["/bin/sh", "docker/docker-entrypoint.sh"]

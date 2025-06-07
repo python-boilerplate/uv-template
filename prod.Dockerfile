@@ -37,5 +37,6 @@ WORKDIR /app
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
+ENV APP_STAGE="production"
 
 ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
