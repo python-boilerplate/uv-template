@@ -2,7 +2,6 @@
 # An example using multi-stage image builds to create a final image without uv.
 
 # First, build the application in the `/app` directory.
-# See `Dockerfile` for details.
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS builder
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 
@@ -37,6 +36,8 @@ WORKDIR /app
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
+
+# Set the application stage to production
 ENV APP_STAGE="production"
 
 ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
