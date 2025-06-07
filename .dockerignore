@@ -49,6 +49,7 @@ Makefile
 .github/
 
 # Docker files
-Dockerfile
+dev.Dockerfile
+prod.Dockerfile
 docker-compose.yml
 .dockerignore

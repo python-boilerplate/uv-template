@@ -38,4 +38,4 @@ WORKDIR /app
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
-CMD ["/bin/sh", "./docker/docker-entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]

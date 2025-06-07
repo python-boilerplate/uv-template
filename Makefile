@@ -1,7 +1,10 @@
 PROJECT_NAME = python-boilerplate
-CONTAINER_NAME = py-blplt
+DEV_NAME = dev
+PROD_NAME = prod
 d = docker
 dc = docker compose
+
+# ============ Commands for local development
 
 run:
 	uv run __main__.py
@@ -18,32 +21,39 @@ format:
 typecheck:
 	uv run mypy --config-file=pyproject.toml --explicit-package-bases ./src/
 
-docker-build:
-	$(d) build -t $(PROJECT_NAME) .
+dev-logs:
+	$(d) logs -f $(DEV_NAME)
 
-docker-bash:
-	$(d) run --rm -it --env-file .env $(PROJECT_NAME) /bin/bash
+dev-exec:
+	$(d) exec -it $(DEV_NAME) /bin/bash
 
-docker-run:
-	$(d) run --rm -it --env-file .env $(PROJECT_NAME)
+dev-bash:
+	$(d) run --rm -it --env-file .env.development $(PROJECT_NAME):dev /bin/bash
 
-docker-logs:
-	$(d) logs -f $(CONTAINER_NAME)
+dev-build:
+	$(dc) --env-file=.env.development build
 
-compose-build:
-	$(dc) up --build -d
+dev-up:
+	$(dc) --env-file=.env.development up -d
 
-compose-up:
-	$(dc) up -d
-
-compose-stop:
+dev-stop:
 	$(dc) stop
 
-compose-down:
+dev-down:
 	$(dc) down
 
 clean:
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	rm -rf .mypy_cache .ruff_cache .pytest_cache
+
+
+# ============ Commands to check prod image
+
+prod-build:
+	$(d) build -t $(PROJECT_NAME):prod -f prod.Dockerfile .
+
+prod-run:
+	$(d) run -it --env-file .env.production --name $(PROD_NAME) $(PROJECT_NAME):prod
+
 
 .PHONY: run test lint format typecheck check docker-build docker-bash docker-run compose-build compose-up compose-stop compose-down clean

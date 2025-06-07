@@ -1,20 +1,17 @@
-# rename to your project name
 name: python-boilerplate
 
-
-# rename to your network
 networks:
   project-network:
-    name: project-network
+    name: ${DOCKER_NETWORK_NAME}
     driver: bridge
 
 services:
   python-boilerplate:
-    image: python-boilerplate
-    container_name: py-blplt
+    image: ${DOCKER_PROJECT_NAME}:${DOCKER_IMAGE_TAG}
+    container_name: ${DOCKER_CONTAINER_NAME}
     build:
-      context: ./
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: dev.Dockerfile
 
     develop:
       watch:
@@ -22,10 +19,8 @@ services:
         - action: sync
           path: .
           target: /app
-          # Exclude the project virtual environment
           ignore:
             - app/.venv/
-
         # Rebuild the image on changes to the `pyproject.toml`
         - action: rebuild
           path: ./app/pyproject.toml
@@ -33,7 +28,11 @@ services:
     ports:
       - "8080:8000"
     restart: on-failure
+
+    # Можливо, краще монтувати все в /app (якщо твій код у src, скоригуй)
     volumes:
-      - ./src/:/src/
+      - ./docs/:/app/docs
+      - ./tests/:/app/tests
+      - ./src/:/app/src/
     networks:
       - project-network
