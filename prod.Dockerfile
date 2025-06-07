@@ -38,6 +38,6 @@ WORKDIR /app
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Set the application stage to production
-ENV APP_STAGE="production"
+ENV APP_STAGE="development"
 
 ENTRYPOINT ["/bin/sh", "./docker/docker-entrypoint.sh"]
