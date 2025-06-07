@@ -13,5 +13,7 @@ ENV_FILE_MAP: Final[dict[str, Path]] = {
     "production": ABS_PATH / ".env.production",
 }
 
+ENV_PATH: Final[Path] = ENV_FILE_MAP[APP_STAGE]
+
 env = Env()
-env.read_env(ENV_FILE_MAP[APP_STAGE])
+env.read_env(ENV_PATH)
