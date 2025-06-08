@@ -1,3 +1,14 @@
+## 0.9.0 (2025-06-07)
+
+### Feat
+
+- add loading env variables based on app stage
+
+### Fix
+
+- move getting correct path to env file to another variable
+- fix name of workflow
+
 ## 0.8.0 (2025-06-05)
 
 ### Feat

@@ -1,10 +1,10 @@
 [project]
 name = "python-boilerplate"
-version = "0.8.0"
+version = "0.9.0"
 description = "A template for quickly starting new projects in Python "
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = ["environs>=14.2.0"]
 
 [dependency-groups]
 dev = [
@@ -28,7 +28,7 @@ lint.select = [
     "N", # pep8-naming
     # "D", # pydocstyle
     "UP", # pyupgrade
-    "I", # isort
+    "I",  # isort
 ]
 
 # Ignore some rules that may be too strict for general use
@@ -73,12 +73,13 @@ section-order = [
 [tool.ruff.format]
 quote-style = "double" # Use double quotes
 indent-style = "space" # Use spaces for indentation
-line-ending = "auto" # Auto-detect line endings
+line-ending = "auto"   # Auto-detect line endings
 
 # ================================= MYPY
 [tool.mypy]
-strict = true # Enable strict type checking
+strict = true                 # Enable strict type checking
 explicit_package_bases = true
+ignore_missing_imports = true # Ignore missing imports for third-party libraries
 
 # ================================= COMMITIZEN
 [tool.commitizen]

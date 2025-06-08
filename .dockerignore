@@ -6,6 +6,8 @@ __pycache__/
 .venv/
 .venv
 .env/
+.env.development
+.env.production
 .Python
 .mypy_cache/
 .ruff_cache/
@@ -16,6 +18,7 @@ __pycache__/
 .hypothesis/
 pip-log.txt
 pip-delete-this-directory.txt
+requirements.txt
 
 # Editor directories and OS files
 .idea/
@@ -42,3 +45,13 @@ mkdocs.yml
 # Project files you don't want in image
 LICENSE
 Makefile
+
+# Github
+.devcontainer/
+.github/
+
+# Docker files
+dev.Dockerfile
+prod.Dockerfile
+docker-compose.yml
+.dockerignore
