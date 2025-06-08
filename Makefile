@@ -12,7 +12,7 @@ ur = uv run
 init:
 	uv sync
 	$(ur) pre-commit install
-g
+
 # ============ Commands for local development
 
 run:
