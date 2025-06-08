@@ -175,3 +175,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Dockerignore file for each app stage
+.dockerignore
