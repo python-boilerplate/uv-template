@@ -6,7 +6,7 @@ __pycache__/
 .venv/
 .venv
 .env/
-.env.development
+example.env
 .env.production
 .Python
 .mypy_cache/
@@ -18,7 +18,6 @@ __pycache__/
 .hypothesis/
 pip-log.txt
 pip-delete-this-directory.txt
-requirements.txt
 
 # Editor directories and OS files
 .idea/
@@ -27,31 +26,13 @@ requirements.txt
 .DS_Store
 Thumbs.db
 
-# Test artifacts
-tests/
-test_*.py
-*.log
-
-# Documentation (optional)
-docs/
-*.md
-mkdocs.yml
-
-# Git
-.git
-.gitignore
-.pre-commit-config.yaml
-
 # Project files you don't want in image
 LICENSE
-Makefile
 
 # Github
 .devcontainer/
 .github/
 
 # Docker files
-dev.Dockerfile
 prod.Dockerfile
-docker-compose.yml
-.dockerignore
+prod.dockerignore
