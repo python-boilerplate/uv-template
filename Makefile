@@ -7,6 +7,12 @@ d = docker
 dc = docker compose
 ur = uv run
 
+# ============ Setup project
+
+init:
+	uv sync
+	$(ur) pre-commit install
+g
 # ============ Commands for local development
 
 run:
