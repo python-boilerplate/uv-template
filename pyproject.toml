@@ -44,7 +44,7 @@ select = [
 ]
 
 # Ignore rules
-ignore = []
+ignore = ["D202", "D212", "D104"]
 
 # Allow unused variables if they start with an underscore
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
