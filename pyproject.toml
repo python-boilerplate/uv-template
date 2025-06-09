@@ -9,13 +9,13 @@ dependencies = ["environs>=14.2.0"]
 [dependency-groups]
 dev = [
     "commitizen>=4.8.2",
-    "mkdocs>=1.6.1",
     "mypy>=1.16.0",
     "pre-commit>=4.2.0",
     "pytest>=8.3.5",
     "pytest-asyncio>=1.0.0",
     "ruff>=0.11.11",
 ]
+doc = ["mkdocs-material>=9.6.14", "mkdocstrings[python]>=0.29.1"]
 
 # ================================= RUFF
 [tool.ruff]
@@ -85,7 +85,7 @@ ignore_missing_imports = true # Ignore missing imports for third-party libraries
 [tool.commitizen]
 name = "cz_conventional_commits"
 tag_format = "$version"
-version_scheme = "pep440"
+version_scheme = "semver2"
 version_provider = "uv"
 update_changelog_on_bump = true
 
