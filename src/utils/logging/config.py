@@ -1,3 +1,5 @@
+"""Configuration constants for logging setup."""
+
 from logging import INFO
 from typing import Final
 

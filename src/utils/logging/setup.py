@@ -1,3 +1,5 @@
+"""Setup logging utilities for the application."""
+
 import logging
 import sys
 
@@ -8,6 +10,12 @@ from src.utils.logging.config import (
 
 
 def setup_logging() -> logging.Logger:
+    """Set up and configure logging for the application.
+
+    Returns:
+        logging.Logger: Configured root logger.
+    """
+
     # Create a logger
     logger = logging.getLogger()
     logger.setLevel(level=DEFAULT_LOGGING_LEVEL)
