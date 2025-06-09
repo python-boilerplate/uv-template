@@ -12,7 +12,7 @@ ur = uv run
 ##@ Setup project
 init: ## Initialize the project
 	uv sync
-	$(ur) pre-commit install
+	$(ur) pre-commit install --install-hooks
 
 ##@ Local development
 run: ## Run the application without Docker

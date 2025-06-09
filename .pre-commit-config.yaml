@@ -25,7 +25,7 @@ repos:
     # Run pytest.
     - id: pytest
       name: pytest
-      entry: pytest
+      entry: uv run pytest
       language: system
       types: [python]
       pass_filenames: false
