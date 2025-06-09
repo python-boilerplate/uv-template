@@ -1,3 +1,5 @@
+"""Environment configuration module for loading environment variables."""
+
 import os
 from pathlib import Path
 from typing import Final
