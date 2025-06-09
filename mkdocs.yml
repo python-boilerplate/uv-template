@@ -1,4 +1,8 @@
 site_name: Python Boilerplate
-nav:
-  - Home: index.md
-theme: readthedocs
+
+theme:
+  name: "material"
+
+plugins:
+- search
+- mkdocstrings

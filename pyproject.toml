@@ -14,8 +14,10 @@ dev = [
     "pytest>=8.3.5",
     "pytest-asyncio>=1.0.0",
     "ruff>=0.11.11",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.14",
+    "mkdocstrings[python]>=0.29.1",
 ]
-doc = ["mkdocs-material>=9.6.14", "mkdocstrings[python]>=0.29.1"]
 
 # ================================= RUFF
 [tool.ruff]
