@@ -17,5 +17,8 @@ ENV_FILE_MAP: Final[dict[str, Path]] = {
 
 ENV_PATH: Final[Path] = ENV_FILE_MAP[APP_STAGE]
 
+if not ENV_PATH.exists():
+    raise FileNotFoundError(f"Environment file not found: {ENV_PATH}")
+
 env = Env()
 env.read_env(ENV_PATH)
