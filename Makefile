@@ -7,72 +7,74 @@ d = docker
 dc = docker compose
 ur = uv run
 
-# ============ Setup project
+.DEFAULT_GOAL := help
 
-init:
+##@ Setup project
+init: ## Initialize the project
 	uv sync
 	$(ur) pre-commit install
 
-# ============ Commands for local development
-
-run:
+##@ Local development
+run: ## Run the application without Docker
 	$(ur) __main__.py
 
-test:
+test: ## Run the tests
 	$(ur) pytest -v
 
-lint:
+lint: ## Run the linter
 	$(ur) ruff check --config=pyproject.toml --fix ./src/
 
-format:
+format: ## Format the code
 	$(ur) ruff format --config=pyproject.toml ./src/
 
-typecheck:
+typecheck: ## Run the type checker
 	$(ur) mypy --config-file=pyproject.toml --explicit-package-bases ./src/
 
-dev-logs:
+dev-logs: ## View development container logs
 	$(d) logs -f $(DEVCONTAINER_NAME)
 
-dev-exec:
+dev-exec: ## Execute a command in the development container
 	$(d) exec -it $(DEVCONTAINER_NAME) /bin/bash
 
-dev-bash:
+dev-bash: ## Start a bash session in the development container
 	$(d) run --rm -it --env-file .env.development $(PROJECT_NAME):$(DEV_TAG) /bin/bash
 
-dev-build:
+dev-build: ## Build the development container
 	cp dev.dockerignore .dockerignore
 	$(dc) --env-file=.env.development build
 
-dev-up:
+dev-up: ## Start the development container
 	$(dc) --env-file=.env.development up -d
 
-dev-stop:
+dev-stop: ## Stop the development container
 	$(dc) stop
 
-dev-down:
+dev-down: ## Stop and remove the development container
 	$(dc) down
 
-clean:
+clean: ## Clean up the project (cache)
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	rm -rf .mypy_cache .ruff_cache .pytest_cache
 
-
-# ============ Commands to check prod image
-
-prod-build:
+##@ Production
+prod-build: ## Build the production Docker image
 	cp prod.dockerignore .dockerignore
 	$(d) build -t $(PROJECT_NAME):$(PROD_TAG) -f prod.Dockerfile .
 
-prod-run:
+prod-run: ## Run the production Docker container
 	$(d) run -d --env-file .env.production --name $(PRODCONTAINER_NAME) $(PROJECT_NAME):$(PROD_TAG)
 
-prod-exec:
+prod-exec: ## Execute a command in the production container
 	$(d) exec -it $(PRODCONTAINER_NAME) /bin/bash
 
-prod-bash:
+prod-bash: ## Start a bash session in the production container
 	$(d) run --rm -it --entrypoint bash --env-file .env.production --name $(PRODCONTAINER_NAME) $(PROJECT_NAME):$(PROD_TAG)
 
-prod-logs:
+prod-logs: ## View production container logs
 	$(d) logs -f $(PRODCONTAINER_NAME)
 
-.PHONY: run test lint format typecheck dev-logs dev-exec dev-bash dev-build dev-up dev-stop dev-down clean prod-build prod-run
+##@ Help
+help: ## Show this help message
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+.PHONY: help run test lint format typecheck dev-logs dev-exec dev-bash dev-build dev-up dev-stop dev-down clean prod-build prod-run
