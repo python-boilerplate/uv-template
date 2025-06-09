@@ -24,17 +24,14 @@
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uv sync",
+	"postCreateCommand": "make init",
 	"customizations": {
 		"vscode": {
-			"profile": "https://gist.github.com/monok8i/13b76ccd25a53adeb429fb044fbf1987",
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"ms-python.mypy-type-checker",
-				"charliermarsh.ruff",
-				"thang-nm.catppuccin-perfect-icons",
-				"catppuccin.catppuccin-vsc"
+				"charliermarsh.ruff"
 			]
 		}
 	}
