@@ -1,4 +1,4 @@
-name: Compability
+name: Check Python Minimum Version
 # This workflow will run compatibility checks using Vermin, which checks the minimum Python version required for the codebase.
 
 # uv run vermin --eval-annotations --backport typing  --no-parse-comments .
