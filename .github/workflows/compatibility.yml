@@ -4,9 +4,9 @@ name: Check Python Minimum Version
 # uv run vermin --eval-annotations --backport typing  --no-parse-comments .
 on:
   push:
-    branches: ["*"]
+    branches: [main]
   pull_request:
-    branches: ["*"]
+    branches: [main]
 
 permissions:
   contents: read
