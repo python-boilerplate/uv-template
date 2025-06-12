@@ -29,10 +29,7 @@ services:
       - "8080:8000"
     restart: on-failure
 
-    # Можливо, краще монтувати все в /app (якщо твій код у src, скоригуй)
     volumes:
-      - ./docs/:/app/docs
-      - ./tests/:/app/tests
       - ./src/:/app/src/
     networks:
       - project-network
