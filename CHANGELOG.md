@@ -1,3 +1,26 @@
+## 0.10.0 (2025-06-14)
+
+### Feat
+
+- add commands for doing commit and bumping version
+- **env.py**: add checking if .env file exists or not
+- **devcontainer.json**: add github cli to devcontainer
+- add init command to setup project using one command
+- add gitlab workflows
+- add gitlab workflows
+- remove github workflows
+
+### Fix
+
+- remove themes
+- **Makefile**: fix command to initialize project
+- **.pre-commit-config.yaml**: fix running pytest
+- fix syntax error
+- restore github actions for main branch after merge
+- set the correct app stage for dev image
+- fix adding all env files to dev image
+- fix command to run container and add logs command to check prod container logs
+
 ## 0.9.0 (2025-06-07)
 
 ### Feat
