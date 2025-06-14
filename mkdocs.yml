@@ -1,7 +1,14 @@
-site_name: Python Boilerplate
+site_name: python-boilerplate/uv-template
+site_url: https://python-boilerplate.github.io
+
+nav:
+  - Home: index.md
+  - Templates:
+      - uv: uv.md
+      - poetry: poetry.md
 
 theme:
-  name: "material"
+  name: material
 
 plugins:
-- search
+  - search
