@@ -73,8 +73,15 @@ prod-bash: ## Start a bash session in the production container
 prod-logs: ## View production container logs
 	$(d) logs -f $(PRODCONTAINER_NAME)
 
+##@ Git
+commit: ## Do commit with conventional commit message
+	$(ur) cz commit
+
+bump: ## Bump the version and update CHANGELOG.md
+	$(ur) cz bump
+
 ##@ Help
 help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
-.PHONY: help run test lint format typecheck dev-logs dev-exec dev-bash dev-build dev-up dev-stop dev-down clean prod-build prod-run
+.PHONY: commit bump help run test lint format typecheck dev-logs dev-exec dev-bash dev-build dev-up dev-stop dev-down clean prod-build prod-run
