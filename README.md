@@ -1,6 +1,10 @@
 <h1 align="center"> Python Boilerplate </h1>
 
+<p align="center"> 
 A comprehensive template for quickly starting new Python projects with modern development tools and best practices.
+</p>
+
+<div align="center">
 
 ![Python Boilerplate](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![uv](https://img.shields.io/badge/uv-0.7.13-purple.svg)
@@ -8,6 +12,7 @@ A comprehensive template for quickly starting new Python projects with modern de
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 [![GitHub Actions Status](https://github.com/monok8i/python-boilerplate/actions/workflows/code-quality.yml/badge.svg)](https://github.com/monok8i/python-boilerplate/actions/workflows/code-quality.yml)
 [![GitHub Actions Status](https://github.com/monok8i/python-boilerplate/actions/workflows/codeql.yml/badge.svg)](https://github.com/monok8i/python-boilerplate/actions/workflows/codeql.yml)
+</div>
 
 
 ## 🚀 Features
