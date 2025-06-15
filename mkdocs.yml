@@ -1,7 +1,39 @@
-site_name: Python Boilerplate
+site_name: uv template
+repo_url: https://github.com/python-boilerplate/uv-template
+repo_name: python-boilerplate/uv-template
+
+nav:
+  - Home:
+    - Overview: index.md
+    - Changelog: changelog.md
+    - License: license.md
+    - Contributing: contributing.md
 
 theme:
-  name: "material"
+  name: material
+  features:
+    - navigation.footer
+    - navigation.tabs
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: teal
+    accent: purple
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: lime
+    toggle:
+      icon: material/weather-night
+      name: Switch to system preference
+
 
 plugins:
-- search
+  - search
