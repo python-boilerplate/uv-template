@@ -1,13 +1,44 @@
 site_name: uv template
+site-description: A comprehensive template for quickly starting new Python projects with modern development tools and best practices.
 repo_url: https://github.com/python-boilerplate/uv-template
 repo_name: python-boilerplate/uv-template
 
 nav:
   - Home:
-    - Overview: index.md
-    - Changelog: changelog.md
-    - License: license.md
-    - Contributing: contributing.md
+    - Overview: home/index.md
+    - Changelog: home/changelog.md
+    - License: home/license.md
+    - Contributing: home/contributing.md
+  - Usage:
+    - Options: usage/options.md
+    - Commands: usage/commands.md
+  - Features:
+    - Overview: features/index.md
+    - Python:
+      - Python 3.10+: features/python.md
+    - Package Management:
+      - uv: features/uv.md
+    - Docker Support:
+      - Overview: features/docker.md
+    - CI/CD:
+      - GitHub Actions: features/ci/github_actions.md
+      - GitLab CI: features/ci/gitlab_ci.md
+    - Dev Containers:
+      - Overview: features/devcontainers.md
+    - Code Quality:
+      - Ruff: features/code_quality/ruff.md
+      - MyPy: features/code_quality/mypy.md
+      - Pytest: features/code_quality/pytest.md
+      - Vermin: features/code_quality/vermin.md
+    - Pre-commit Hooks: features/pre-commit.md
+    - Commitizen: features/commitizen.md
+    - Environment Management: features/environment.md
+    - Documentation:
+      - MkDocs: features/mkdocs.md
+    - Automation:
+      - Makefile: features/makefile.md
+  - Reference:
+    - Project Structure: features/reference/project_structure.md
 
 theme:
   name: material
@@ -37,3 +68,8 @@ theme:
 
 plugins:
   - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

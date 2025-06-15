@@ -38,40 +38,40 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 ## ⚠️ Important
 
-> **Note**: This is a boilerplate template.
-> After cloning or generating your project, remember to:
-> - Update your project name in `pyproject.toml` and `docker-compose.yml`
-> - Replace this README with documentation specific to your project
-> - Configure environment variables in `.env.development` and `.env.production`
-> - Customize the Makefile commands as needed for your project
+!!! note "Note"
+    This is a boilerplate template.
+    After cloning or generating your project, remember to:
 
+    - Update your project name in `pyproject.toml` and `docker-compose.yml`
+    - Replace this README with documentation specific to your project
+    - Configure environment variables in `.env.development` and `.env.production`
+    - Customize the Makefile commands as needed for your project
 ---
 
 ## ⚡ Quick Start
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/python-boilerplate/uv-template
-    cd uv-template
-    ```
+**Clone the repository:**
 
-2. **Initialize the project:**
-    ```bash
-    make init
-    ```
-    This will:
-    - Install all dependencies using uv
-    - Set up pre-commit hooks
+```bash
+git clone https://github.com/python-boilerplate/uv-template
+cd uv-template
+```
 
-3. **Set up environment variables:**
-   ```bash
-   cp example.env .env.development
-   # Edit .env.development as needed
-   ```
+**Initialize the project:**
+```bash
+make init
+```
+- this will install dependencies (with creating virtual environment), set up pre-commit hooks
 
-4. **Run the application:**
-   ```bash
-   make run
-   ```
+**Set up environment variables:**
+```bash
+cp example.env .env.development
+# Edit .env.development as needed
+```
+
+**Run the application:**
+```bash
+make run
+```
 
 ---
