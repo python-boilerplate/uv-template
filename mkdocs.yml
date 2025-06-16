@@ -38,7 +38,7 @@ nav:
     - Automation:
       - Makefile: features/makefile.md
   - Reference:
-    - Project Structure: features/reference/project_structure.md
+    - Project Structure: reference/project_structure.md
 
 theme:
   name: material
