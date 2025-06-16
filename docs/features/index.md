@@ -1,10 +1,10 @@
 
-## ⚠️ Important
-!!! note
+## Info
+!!! info
     This template includes tools that I use myself, as well as some that are experimental.
 
     - Some features and tools may change as I gain more experience with them.
-    - All configuration details and explanations are available in the [Configuration](./configuration.md) section.
+    - Read more about each feature and its settings in the separate subsections of this section.
 
 ---
 

@@ -1,5 +1,4 @@
 site_name: uv template
-site-description: A comprehensive template for quickly starting new Python projects with modern development tools and best practices.
 repo_url: https://github.com/python-boilerplate/uv-template
 repo_name: python-boilerplate/uv-template
 
@@ -16,15 +15,12 @@ nav:
     - Overview: features/index.md
     - Python:
       - Python 3.10+: features/python.md
-    - Package Management:
-      - uv: features/uv.md
-    - Docker Support:
-      - Overview: features/docker.md
+    - UV: features/uv.md
+    - Docker: features/docker.md
     - CI/CD:
       - GitHub Actions: features/ci/github_actions.md
       - GitLab CI: features/ci/gitlab_ci.md
-    - Dev Containers:
-      - Overview: features/devcontainers.md
+    - Dev Containers: features/devcontainers.md
     - Code Quality:
       - Ruff: features/code_quality/ruff.md
       - MyPy: features/code_quality/mypy.md
@@ -33,10 +29,8 @@ nav:
     - Pre-commit Hooks: features/pre-commit.md
     - Commitizen: features/commitizen.md
     - Environment Management: features/environment.md
-    - Documentation:
-      - MkDocs: features/mkdocs.md
-    - Automation:
-      - Makefile: features/makefile.md
+    - MkDocs: features/mkdocs.md
+    - Makefile: features/makefile.md
   - Reference:
     - Project Structure: reference/project_structure.md
 

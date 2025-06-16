@@ -15,15 +15,15 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 - **Python 3.10+**
 - **[uv](https://docs.astral.sh/uv/)** — Ultra-fast Python package installer and dependency resolver
-- **Docker Support** — Multi-stage Dockerfiles for both local development and clean production containers
-- **GitHub Actions CI/CD** — Automated pipelines for code quality checks, testing, security scanning, and Python compatibility validation
-- **Dev Containers** — Pre-configured development environment for codespaces or remote development
-- **Code Quality Tools** — Integrated linting with `Ruff`, static type checking with `MyPy`, comprehensive testing with `Pytest` and checking minimal Python version to run your code (without dependencies) with `Vermin`
-- **Pre-commit Hooks** — Automated code quality enforcement (linting, formatting, and tests before every commit)
-- **Commitizen** — Standardized commit messages and automated changelog/versioning
+- **[Docker Support](https://docs.docker.com/)** — Multi-stage Dockerfiles for both local development and clean production containers
+- **[GitHub Actions CI/CD](https://docs.github.com/en/actions)** — Automated pipelines for code quality checks, testing, security scanning, and Python compatibility validation
+- **[Dev Containers](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)** — Pre-configured development environment for codespaces or remote development
+- **[Code Quality Tools](https://docs.astral.sh/ruff/)** — Integrated linting and formatting with [Ruff](https://docs.astral.sh/ruff/), static type checking with [MyPy](https://mypy.readthedocs.io/en/stable/), comprehensive testing with [Pytest](https://docs.pytest.org/en/stable/) and checking minimal Python version to run your code (without dependencies) with [Vermin](https://github.com/netromdk/vermin)
+- **[Pre-commit Hooks](https://pre-commit.com/)** — Automated code quality enforcement (linting, formatting, and tests before every commit)
+- **[Commitizen](https://commitizen-tools.github.io/commitizen/)** — Standardized commit messages and automated changelog/versioning
 - **Environment Management** — Stage-based configuration system supporting development and production environments
-- **MkDocs Documentation** — Documentation with Material theme and automated generation
-- **Makefile Automation** — Simplified command interface for common development tasks
+- **[MkDocs Documentation](https://www.mkdocs.org/)** — Documentation with Material theme and automated generation
+- **[Makefile Automation](https://www.gnu.org/software/make/)** — Simplified command interface for common development tasks
 
 ---
 
@@ -38,7 +38,7 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 ## ⚠️ Important
 
-!!! note "Note"
+!!! info
     This is a boilerplate template.
     After cloning or generating your project, remember to:
 

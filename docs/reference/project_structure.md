@@ -43,6 +43,6 @@ Below is an overview of the key files and directories:
 ## Notes
 
 !!! note ""
-    - All configs of development and CI tools are defined in `pyproject.toml` (without `mkdocs`).
+    - All configs of development and CI tools are defined in `pyproject.toml` (without `mkdocs` and `pre-commit`).
     - Pre-commit, linting, type-checking, and tests are automated via Makefile and CI.
     - Environment configuration is stage-based (development/production).
