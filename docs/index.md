@@ -38,7 +38,7 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 ## ⚠️ Important
 
-!!! info
+!!! warning "!"
     This is a boilerplate template.
     After cloning or generating your project, remember to:
 
@@ -50,28 +50,27 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 ## ⚡ Quick Start
 
-**Clone the repository:**
+!!! info "Step 1: Clone the repository"
+    ```bash
+    git clone https://github.com/python-boilerplate/uv-template
+    cd uv-template
+    ```
 
-```bash
-git clone https://github.com/python-boilerplate/uv-template
-cd uv-template
-```
+!!! info "Step 2: Initialize the project"
+    ```bash
+    make init
+    ```
+    This will install dependencies (with creating virtual environment) and set up pre-commit hooks
 
-**Initialize the project:**
-```bash
-make init
-```
-- this will install dependencies (with creating virtual environment), set up pre-commit hooks
+!!! info "Step 3: Set up environment variables"
+    ```bash
+    cp example.env .env.development
+    # Edit .env.development as needed
+    ```
 
-**Set up environment variables:**
-```bash
-cp example.env .env.development
-# Edit .env.development as needed
-```
-
-**Run the application:**
-```bash
-make run
-```
+!!! info "Step 4: Run the application"
+    ```bash
+    make run
+    ```
 
 ---

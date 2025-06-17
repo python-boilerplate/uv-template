@@ -1,6 +1,6 @@
 
 ## Info
-!!! info
+!!! info "!"
     This template includes tools that I use myself, as well as some that are experimental.
 
     - Some features and tools may change as I gain more experience with them.

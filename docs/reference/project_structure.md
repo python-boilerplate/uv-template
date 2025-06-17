@@ -2,8 +2,8 @@
 ## Structure
 
 Below is an overview of the key files and directories:
-!!! tip
-    ```
+!!! tip "!"
+    ```markdown title="Project Structure"
     .
     ├── CHANGELOG.md               # Automatically generated changelog (Commitizen)
     ├── CONTRIBUTING.md            # Guidelines for contributing to the project
@@ -14,7 +14,7 @@ Below is an overview of the key files and directories:
     ├── assets/                    # Static assets (images, icons, etc.)
     ├── dev.Dockerfile             # Dockerfile for fast local/dev environment with uv
     ├── dev.dockerignore           # Exclude files from dev Docker image build context
-    ├── docker/
+    ├── docker/                    # Docker-related files (volumes, configs, etc.)
     │   └── docker-entrypoint.sh   # Entrypoint script for Docker containers
     ├── docker-compose.yml         # Compose file for multi-container development
     ├── docs/                      # Documentation source files for MkDocs
@@ -42,7 +42,7 @@ Below is an overview of the key files and directories:
 
 ## Notes
 
-!!! note ""
+!!! note "!"
     - All configs of development and CI tools are defined in `pyproject.toml` (without `mkdocs` and `pre-commit`).
     - Pre-commit, linting, type-checking, and tests are automated via Makefile and CI.
     - Environment configuration is stage-based (development/production).
