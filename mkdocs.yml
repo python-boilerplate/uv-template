@@ -4,7 +4,7 @@ repo_name: python-boilerplate/uv-template
 
 nav:
   - Home:
-    - Overview: home/index.md
+    - Overview: index.md
     - Changelog: home/changelog.md
     - License: home/license.md
     - Contributing: home/contributing.md
