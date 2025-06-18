@@ -7,7 +7,7 @@
 ## What is it used for here?
 !!! question "!"
     - **`linting` Python code to enforce coding standards and catch potential errors**
-    - **`formatting` Python code to ensure consistent style (while you are writing code)**
+    - **`formatting` Python code to ensure consistent style**
     - **сhecking code quality before every commit and during CI pipelines**
 
 ---
@@ -44,6 +44,55 @@
 
         ```bash
         uv run ruff format --config=pyproject.toml ./src/
+        ```
+
+## How to use it with pre-commit?
+
+To use Ruff with pre-commit, you need to add a configuration for it in your `.pre-commit-config.yaml` file.
+
+!!! tip "!"
+
+    === "Hook (by ruff)"
+
+        ```yaml title=".pre-commit-config.yaml"
+        - repo: https://github.com/astral-sh/ruff-pre-commit
+          rev: v0.11.12
+          hooks:
+            # Run the linter.
+            - id: ruff-check
+              args: [ --config=pyproject.toml ]
+              files: ^src/
+
+            # Run the formatter.
+            - id: ruff-format
+              args: [ --config=pyproject.toml ]
+              files: ^src/
+        ```
+
+    === "Hook (your own)"
+
+        ```yaml title=".pre-commit-config.yaml"
+        - repo: local
+          hooks:
+            # lint code
+            - id: ruff
+              name: Ruff
+              description: Run Ruff for linting Python code
+              entry: uv run ruff check --config=pyproject.toml ./src/
+              types: [python]
+              language: system
+              always_run: true
+              pass_filenames: false
+
+            # format code
+            - id: ruff
+              name: Ruff
+              description: Run Ruff for formatting Python code
+              entry: uv run ruff format --config=pyproject.toml ./src/
+              types: [python]
+              language: system
+              always_run: true
+              pass_filenames: false
         ```
 
 ## Configuration
