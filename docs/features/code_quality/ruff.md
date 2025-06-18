@@ -102,4 +102,4 @@ Main settings are in the pyproject.toml file.
 
 ---
 
-You can find more information about linter and formatter configuration here: [Ruff Documentation](https://docs.astral.sh/ruff/)
+For more details on configuration, see the [Ruff Documentation](https://docs.astral.sh/ruff/)
