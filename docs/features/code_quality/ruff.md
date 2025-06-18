@@ -1,6 +1,6 @@
 # Ruff
 
-[Ruff](https://docs.astral.sh/ruff/) — An extremely fast Python linter and code formatter, written in Rust.
+An extremely fast Python linter and code formatter, written in Rust.
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## How to use it?
 
-- **In this case, Makefile does exactly the same thing as commands run without it using uv. It is only used for abbreviated launch.**
+- **In this case, the Makefile does the same as running the commands directly via uv. The Makefile is only needed to shorten commands.**
 
 !!! tip "!"
 

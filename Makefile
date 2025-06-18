@@ -28,7 +28,7 @@ format: ## Format the code
 	$(ur) ruff format --config=pyproject.toml ./src/
 
 typecheck: ## Run the type checker
-	$(ur) mypy --config-file=pyproject.toml --explicit-package-bases ./src/
+	$(ur) mypy --config-file=pyproject.toml ./src/
 
 dev-logs: ## View development container logs
 	$(d) logs -f $(DEVCONTAINER_NAME)

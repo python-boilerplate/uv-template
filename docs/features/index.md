@@ -13,7 +13,7 @@
 ### **Python 3.10+**
   Uses modern Python features and syntax.
 
-### **[uv](https://docs.astral.sh/uv/)**
+### **uv**
   Ultra-fast Python dependency installer with lock file support and isolated environments.
 
 ### **Docker Support**
