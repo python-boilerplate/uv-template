@@ -78,21 +78,23 @@ To use Ruff with pre-commit, you need to add a configuration for it in your `.pr
             - id: ruff
               name: Ruff
               description: Run Ruff for linting Python code
-              entry: uv run ruff check --config=pyproject.toml ./src/
+              entry: uv run ruff check
               types: [python]
               language: system
               always_run: true
               pass_filenames: false
+              args: [ --config=pyproject.toml, ./src/ ]
 
             # format code
             - id: ruff
               name: Ruff
               description: Run Ruff for formatting Python code
-              entry: uv run ruff format --config=pyproject.toml ./src/
+              entry: uv run ruff format
               types: [python]
               language: system
               always_run: true
               pass_filenames: false
+              args: [ --config=pyproject.toml, ./src/ ]
         ```
 
 ## Configuration

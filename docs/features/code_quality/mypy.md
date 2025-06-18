@@ -62,11 +62,12 @@ To use MyPy with pre-commit, you need to add the appropriate configuration to `.
             - id: mypy
               name: Mypy
               description: Run Mypy for type checking types in Python code
-              entry: uv run mypy --config-file=pyproject.toml ./src/
+              entry: uv run mypy
               types: [python]
               language: system
               always_run: true
               pass_filenames: false
+              args: [ --config-file=pyproject.toml, ./src/ ]
         ```
 
 ## Configuration
