@@ -82,7 +82,7 @@ This template maximally automates working with the project using a `Makefile`. I
 - **`make commit`**
     Creates a commit using [Commitizen](https://commitizen-tools.github.io/commitizen/) (launches a wizard for conventional commits).
 - **`make bump`**
-    Bumps the project version and automatically updates `CHANGELOG.md` (Commitizen).
+    Bumps the project version and automatically updates `CHANGELOG.md` and `pyproject.toml` (Commitizen).
 
 ---
 

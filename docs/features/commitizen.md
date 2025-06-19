@@ -7,7 +7,7 @@ A tool for creating standardized commit messages and automated versioning in you
 ## What is it used for here?
 !!! question "!"
     - **standardizing commit messages** using the Conventional Commits specification
-    - **automatically bumping project version** and generating/updating `CHANGELOG.md`
+    - **automatically bumping project version** and generating/updating `CHANGELOG.md` and `pyproject.toml` (only updating)
     - **integrating with pre-commit hooks** to ensure commit messages follow the defined style
 ---
 
@@ -15,7 +15,7 @@ A tool for creating standardized commit messages and automated versioning in you
 
 - **Interactive CLI** for creating conventional commit messages via a wizard.
 - **Automatic version bump** based on commit history (`major`, `minor`, `patch`).
-- **Generates and updates `CHANGELOG.md`** automatically.
+- **Generates and updates `CHANGELOG.md`** and `pyproject.toml` (only updating) automatically.
 
 ---
 
