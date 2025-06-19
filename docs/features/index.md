@@ -3,18 +3,18 @@
 !!! info "!"
     This template includes tools that I use myself, as well as some that are experimental.
 
-    - Some features and tools may change as I gain more experience with them.
-    - Read more about each feature and its settings in the separate subsections of this section.
+    - Therefore, I have only added those configurations that I use myself, without unnecessary details.
+    - But some features and tools may change as I gain more experience with them.
+    - Read more about each feature and its settings in the individual subsections of this section.
 
 ---
 
 ## 🚀 Features
 
 ### **Python 3.10+**
-  Uses modern Python features and syntax.
 
 ### **uv**
-  Ultra-fast Python dependency installer with lock file support and isolated environments.
+  Ultra-fast Python project manager and dependency installer with lock file support and isolated environments.
 
 ### **Docker Support**
   Multi-stage Dockerfiles for easy local development and clean production containers.
