@@ -14,6 +14,8 @@ init: ## Initialize the project
 	uv sync
 	$(ur) pre-commit install --install-hooks
 
+	$(ur) pre-commit autoupdate
+
 ##@ Local development
 run: ## Run the application without Docker
 	$(ur) __main__.py
