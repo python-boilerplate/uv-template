@@ -10,11 +10,11 @@ A tool for determining the minimum Python version required to run your code, bas
 
 ---
 
-## Features
+## Important
 
 - Vermin analyzes only your code's syntax and use of the standard library.
 
-!!! warning "Important"
+!!! warning "!"
     - If you use external libraries that require newer Python versions, Vermin will not detect this. It does not check dependencies from requirements.txt or pyproject.toml.
     - In this template, Vermin is used exclusively in CI via GitHub Actions to ensure code backward compatibility.
 

@@ -12,9 +12,10 @@ A powerful framework for testing Python code, supporting both synchronous and as
 
 ---
 
-## Features
+## Important
 
-- For testing asynchronous functions, the [pytest-asyncio](https://pytest-asyncio.readthedocs.io/en/latest/) extension is added, which makes it easy to write and run async tests alongside regular ones.
+!!! warning "!"
+    - For testing asynchronous functions, the [pytest-asyncio](https://pytest-asyncio.readthedocs.io/en/latest/) extension is added, which makes it easy to write and run async tests alongside regular ones.
 
 ---
 
@@ -64,6 +65,7 @@ Only a local hook is used for integration with pre-commit.
               pass_filenames: false
               args: [ -v ]
         ```
+---
 
 ## Configuration
 

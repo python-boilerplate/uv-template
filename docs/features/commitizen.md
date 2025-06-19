@@ -58,11 +58,10 @@ To use Commitizen with pre-commit, you need to add a configuration for it in you
 
         ```yaml title=".pre-commit-config.yaml"
         - repo: https://github.com/commitizen-tools/commitizen
-          rev: master
+          rev: v4.8.3
           hooks:
             - id: commitizen
-            - id: commitizen-branch
-            stages: [commit-msg, pre-push]
+              stages: [commit-msg]
         ```
 
     === "Hook (your own)"
@@ -99,4 +98,4 @@ All configuration for Commitizen in this template is located in [pyproject.toml]
 
 ---
 
-For more details, see the [Commitizen Documentation](https://commitizen-tools.github.io/commitizen/)
+For more details on configuration, see the [Commitizen Documentation](https://commitizen-tools.github.io/commitizen/)
