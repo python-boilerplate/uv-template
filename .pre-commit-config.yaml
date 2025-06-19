@@ -35,4 +35,4 @@ repos:
   rev: v4.8.3
   hooks:
     - id: commitizen
-      stages: [commit-msg, pre-push]
+      stages: [commit-msg]
