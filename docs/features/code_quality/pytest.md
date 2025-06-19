@@ -67,7 +67,7 @@ Only a local hook is used for integration with pre-commit.
 
 ## Configuration
 
-The main settings and plugins (such as `pytest-asyncio`) are located in the `pyproject.toml` file.
+All configuration for Pytest (such as plugins) in this template is located in [pyproject.toml](https://github.com/python-boilerplate/uv-template/blob/main/pyproject.toml) under the `[tool.pytest.ini_options]` section.
 
 ---
 

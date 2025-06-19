@@ -98,7 +98,7 @@ To use Ruff with pre-commit, you need to add a configuration for it in your `.pr
         ```
 
 ## Configuration
-Main settings are in the pyproject.toml file.
+All configuration for Ruff in this template is located in [pyproject.toml](https://github.com/python-boilerplate/uv-template/blob/main/pyproject.toml) under the `[tool.ruff]` section.
 
 ---
 

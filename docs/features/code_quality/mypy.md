@@ -71,7 +71,7 @@ To use MyPy with pre-commit, you need to add the appropriate configuration to `.
         ```
 
 ## Configuration
-The main settings are located in the `pyproject.toml` file.
+All configuration for Mypy in this template is located in [pyproject.toml](https://github.com/python-boilerplate/uv-template/blob/main/pyproject.toml) under the `[tool.mypy]` section.
 
 ---
 
