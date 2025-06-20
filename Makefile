@@ -1,8 +1,10 @@
-PROJECT_NAME = python-boilerplate
-DEV_TAG = dev
-PROD_TAG = prod
-DEVCONTAINER_NAME = dev
-PRODCONTAINER_NAME = prod
+DOCKER_PROJECT_NAME=python-boilerplate
+DOCKER_NETWORK_NAME=project-network
+DOCKER_DEV_IMAGE_TAG=dev
+DOCKER_PROD_IMAGE_TAG=prod
+DOCKER_DEV_CONTAINER_NAME=dev
+DOCKER_PROD_CONTAINER_NAME=prod
+
 d = docker
 dc = docker compose
 ur = uv run
@@ -13,7 +15,6 @@ ur = uv run
 init: ## Initialize the project
 	uv sync
 	$(ur) pre-commit install --install-hooks
-
 	$(ur) pre-commit autoupdate
 
 ##@ Local development
@@ -33,13 +34,13 @@ typecheck: ## Run the type checker
 	$(ur) mypy --config-file=pyproject.toml ./src/
 
 dev-logs: ## View development container logs
-	$(d) logs -f $(DEVCONTAINER_NAME)
+	$(d) logs -f $(DOCKER_DEV_CONTAINER_NAME)
 
 dev-exec: ## Execute a command in the development container
-	$(d) exec -it $(DEVCONTAINER_NAME) /bin/bash
+	$(d) exec -it $(DOCKER_DEV_CONTAINER_NAME) /bin/bash
 
 dev-bash: ## Start a bash session in the development container
-	$(d) run --rm -it --env-file .env.development $(PROJECT_NAME):$(DEV_TAG) /bin/bash
+	$(d) run --rm -it --env-file .env.development $(DOCKER_PROJECT_NAME):$(DOCKER_DEV_IMAGE_TAG) /bin/bash
 
 dev-build: ## Build the development container
 	cp dev.dockerignore .dockerignore
@@ -61,19 +62,19 @@ clean: ## Clean up the project (cache)
 ##@ Production
 prod-build: ## Build the production Docker image
 	cp prod.dockerignore .dockerignore
-	$(d) build -t $(PROJECT_NAME):$(PROD_TAG) -f prod.Dockerfile .
+	$(d) build -t $(DOCKER_PROJECT_NAME):$(DOCKER_PROD_IMAGE_TAG) -f prod.Dockerfile .
 
 prod-run: ## Run the production Docker container
-	$(d) run -d --env-file .env.production --name $(PRODCONTAINER_NAME) $(PROJECT_NAME):$(PROD_TAG)
+	$(d) run -d --env-file .env.production --name $(DOCKER_PROD_CONTAINER_NAME) $(DOCKER_PROJECT_NAME):$(DOCKER_PROD_IMAGE_TAG)
 
 prod-exec: ## Execute a command in the production container
-	$(d) exec -it $(PRODCONTAINER_NAME) /bin/bash
+	$(d) exec -it $(DOCKER_PROD_CONTAINER_NAME) /bin/bash
 
 prod-bash: ## Start a bash session in the production container
-	$(d) run --rm -it --entrypoint bash --env-file .env.production --name $(PRODCONTAINER_NAME) $(PROJECT_NAME):$(PROD_TAG)
+	$(d) run --rm -it --entrypoint bash --env-file .env.production --name $(DOCKER_PROD_CONTAINER_NAME) $(DOCKER_PROJECT_NAME):$(DOCKER_PROD_IMAGE_TAG)
 
 prod-logs: ## View production container logs
-	$(d) logs -f $(PRODCONTAINER_NAME)
+	$(d) logs -f $(DOCKER_PROD_CONTAINER_NAME)
 
 ##@ Git
 commit: ## Do commit with conventional commit message
