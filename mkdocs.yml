@@ -9,7 +9,7 @@ nav:
     - License: home/license.md
     - Contributing: home/contributing.md
   - Usage:
-    - Options: usage/options.md
+    - Options: usage/index.md
     - Commands: usage/commands.md
   - Features:
     - Overview: features/index.md
