@@ -109,7 +109,7 @@ A simple way to automate everyday project tasks with a single command. It allows
 
 ## Useful
 
-- All main template commands are described in [usage/commands.md](../usage/commands.md).
+- All main template commands are described in [Commands](../usage/commands.md) section.
 - Makefile is OS-independent (works on Linux/macOS, on Windows via WSL or Git Bash).
 - You can combine commands, for example:
     ```bash

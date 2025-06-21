@@ -7,7 +7,7 @@ variable, and loads the appropriate `.env.*` file automatically.
 
 ---
 
-## How Environment Loading Works in This Project
+## How environment loading works in this project
 
 ### **Stage-based Environment Selection**
 
