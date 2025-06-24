@@ -3,36 +3,8 @@ repo_url: https://github.com/python-boilerplate/uv-template
 repo_name: python-boilerplate/uv-template
 
 nav:
-  - Home:
-    - Overview: index.md
-    - Changelog: home/changelog.md
-    - License: home/license.md
-    - Contributing: home/contributing.md
-  - Usage:
-    - Options: usage/index.md
-    - Commands: usage/commands.md
-  - Features:
-    - Overview: features/index.md
-    - Python:
-      - Python 3.10+: features/python.md
-    - UV: features/uv.md
-    - Docker: features/docker.md
-    - CI/CD:
-      - GitHub Actions: features/ci/github_actions.md
-      - GitLab CI: features/ci/gitlab_ci.md
-    - Dev Containers: features/devcontainers.md
-    - Code Quality:
-      - Ruff: features/code_quality/ruff.md
-      - MyPy: features/code_quality/mypy.md
-      - Pytest: features/code_quality/pytest.md
-      - Vermin: features/code_quality/vermin.md
-    - Pre-commit Hooks: features/pre-commit.md
-    - Commitizen: features/commitizen.md
-    - Environment Management: features/environment.md
-    - MkDocs: features/mkdocs.md
-    - Makefile: features/makefile.md
-  - Reference:
-    - Project Structure: reference/project_structure.md
+  - Home: index.md
+
 
 theme:
   name: material
