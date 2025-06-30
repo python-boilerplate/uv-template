@@ -96,14 +96,14 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 2. **Dockerized Development:**
    Utilize Docker and Docker Compose for isolated, containerized workflows.
-   See [Docker instructions](https://monok8i.github.io/python-boilerplate/docker/) in the documentation.
+   See [Docker instructions](https://python-boilerplate.github.io/uv-template/features/docker/) in the documentation.
 
 3. **GitHub Codespaces:**
    Launch in [GitHub Codespaces](https://github.com/features/codespaces) for instant cloud-based development with pre-configured devcontainer support.
 
 ## 📚 Documentation
 
-**For detailed guides and advanced scenarios, see the [full documentation](https://monok8i.github.io/python-boilerplate/).**
+**For detailed guides and advanced scenarios, see the [full documentation](https://python-boilerplate.github.io).**
 
 
 ## 📄 License
