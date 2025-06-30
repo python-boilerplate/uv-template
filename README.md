@@ -67,7 +67,7 @@ A comprehensive template for quickly starting new Python projects with modern de
 
 3. **Set up environment variables:**
    ```bash
-   cp example.env .env.development
+   cp .env.example .env.development
    # Edit .env.development as needed
    ```
 
