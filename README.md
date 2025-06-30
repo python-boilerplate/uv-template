@@ -1,4 +1,4 @@
-<h1 align="center"> Python Boilerplate </h1>
+<h1 align="center"> python-boilerplate/uv-template </h1>
 
 <p align="center">
 A comprehensive template for quickly starting new Python projects with modern development tools and best practices.
